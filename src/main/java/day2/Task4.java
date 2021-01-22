@@ -7,7 +7,7 @@ public class Task4 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         double x = s.nextDouble();
-        double y = 0;
+        double y;
         if (x >= 5) {
         y = (Math.pow(x, 2) - 10) / (x + 7);
         }
