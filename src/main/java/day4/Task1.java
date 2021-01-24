@@ -28,7 +28,7 @@ public class Task1 {
             if (mass[i] % 2 == 0){
                 count3++;
             }
-            if (mass[i] % 2 != 0){
+            else {
                 count4++;
             }
             sum += mass[i];
