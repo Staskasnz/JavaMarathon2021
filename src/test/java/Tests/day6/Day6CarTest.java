@@ -17,7 +17,7 @@
 //
 //    @Test
 //    public void yearDifference() {
-//        car.setYear(2020);
+//        car.setRealise(2020);
 //        int diff = car.yearDifference(1980);
 //        assertEquals(40, diff, "Год выпуска автомобиля 2020, год для сравнения 1980");
 //    }
