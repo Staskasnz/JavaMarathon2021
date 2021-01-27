@@ -8,9 +8,8 @@ public class Player {
 
     public Player(int stamina) {
         this.stamina = stamina;
-        countPlayers++;
-        if (countPlayers > 6){
-            countPlayers = 6;
+            if (countPlayers < 6){
+            countPlayers++;
         }
     }
 
@@ -23,7 +22,12 @@ public class Player {
     }
 
     public void run(){
+        if (stamina == 0){
+            return;
+        }
+
         stamina--;
+
         if(stamina == 0){
             countPlayers--;
         }

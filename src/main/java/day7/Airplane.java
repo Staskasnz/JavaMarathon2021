@@ -52,11 +52,14 @@ public class Airplane {
         if (one.length > two.length) {
             System.out.println(one.model + " длиннее");
         }
-            else{
-                System.out.println(two.model + " длиннее");
-            }
+        else if (two.length > one.length){
+            System.out.println(two.model + " длиннее");
+        }
+        else {
+            System.out.println("Длины самолетов равны");
         }
     }
+}
 
 
 
