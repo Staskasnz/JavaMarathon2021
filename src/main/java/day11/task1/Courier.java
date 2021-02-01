@@ -3,24 +3,28 @@ package day11.task1;
 public class Courier implements Worker  {
     private int salary;
     private int isPayed;
+    private Warehouse warehouse;
+    private int countBonus;
 
     @Override
     public void bonus() {
-        if (Warehouse.getCountDeliveredOrders() == 10000) {
-            this.isPayed += 50000;
-        } else if (Warehouse.getCountDeliveredOrders() < 10000){
-            System.out.println("Бонус пока не доступен");
+        if (countBonus < 1) {
+            if (warehouse.getCountPickedOrders() >= 10000) {
+                this.isPayed += 50000;
+                countBonus++;
+            } else if (warehouse.getCountPickedOrders() < 10000) {
+                System.out.println("Бонус пока не доступен");
+            }
         }
         else {
             System.out.println("Бонус уже был выплачен.");
-            this.isPayed += 50000;
         }
     }
 
     @Override
     public void doWork() {
         this.salary += 100;
-        Warehouse.deliveredOrdersPlus();
+        warehouse.deliveredOrdersPlus();
     }
 
     public int getSalary() {
@@ -32,7 +36,7 @@ public class Courier implements Worker  {
     }
 
     public Courier(Warehouse warehouse) {
-
+        this.warehouse = warehouse;
     }
 
     @Override

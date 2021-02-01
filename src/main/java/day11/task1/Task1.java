@@ -14,11 +14,14 @@ public class Task1 {
         Courier courier2 = new Courier(warehouse2);
         picker2.doWork();
         courier2.doWork();
+        System.out.println(picker2.toString());
+
     }
     static void businessProcess (Worker worker){
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 10001; i++) {
             worker.doWork();
         }
+        worker.bonus();
         worker.bonus();
     }
 
