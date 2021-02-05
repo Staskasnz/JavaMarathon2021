@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Task2 {
-    public static void main(String[] args) {
-        File file = new File("people");
-        try {
-            System.out.println(parseFileToStringList(file));
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден");
-        }
+public class Person {
+
+    private String name;
+    private String age;
+
+    public Person(String name, String age) {
+        this.name = name;
+        this.age = age;
     }
 
-    public static List<String> parseFileToStringList(File file) throws FileNotFoundException {
-        List<String> people = new ArrayList<>();
+    public static List<Person> parseFileToObjList(File file) throws FileNotFoundException {
+        List<Person> people = new ArrayList<>();
         Scanner scanner = new Scanner(file);
         for (int i = 0; i < 5; i++) {
             String line = scanner.nextLine();
@@ -31,9 +31,19 @@ public class Task2 {
                     return null;
                 }
             } else { // если возраст больше нуля то добавляем считаную строку из файла в список
-                people.add(line);
+                people.add(new Person(members[0], members[1]));
             }
         }
         return people;
     }
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
+
+
+
