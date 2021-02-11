@@ -7,12 +7,11 @@ public class ChessBoard {
     ChessPiece empty = ChessPiece.EMPTY;
 
     public ChessBoard(ChessPiece[][] chessPieces) {
-        for (int i = 0; i < chessPieces.length; i++) {
+        for (int i = 0; i< chessPieces.length; i++) {
             for (int j = 0; j < chessPieces[i].length; j++) {
                 chessPieces[i][j] = empty;
-                this.chessPieces = chessPieces;
-            }
-        }
+        this.chessPieces = chessPieces;
+
     }
 
     public void print() {
