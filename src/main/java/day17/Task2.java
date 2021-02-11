@@ -38,8 +38,10 @@ public class Task2 {
         chessBoardMassObject[6][5] = pawn_white;
         chessBoardMassObject[6][7] = pawn_white;
         chessBoardMassObject[7][5] = rook_white;
-        chessBoardMassObject[7][6] = king_white;
+        chessBoardMassObject[7][5] = king_white;
 
         chessBoard.print();
+
+
     }
 }
